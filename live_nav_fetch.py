@@ -38,7 +38,10 @@ def fetch_nav_data(scheme_code):
         print(f"Error: Failed to fetch data. HTTP Status Code: {response.status_code}")
         return None
 
-# Execute the function using the target ID from your task sheet
+# Execute the function using the 5 target IDs from your task sheet
 if __name__ == "__main__":
-    target_scheme = "125497" 
-    hdfc_df = fetch_nav_data(target_scheme)
+    key_schemes = ["119551", "120503", "118632", "120465", "120841"]
+    
+    for scheme in key_schemes:
+        print(f"\nProcessing Scheme: {scheme}")
+        fetch_nav_data(scheme)
